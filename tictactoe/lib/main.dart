@@ -87,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: (){
                       setState(() {
                         if(a==""){
-                          print(a);
+                          print(b);
                           a=to_update_X?"X":"O";
                           to_update_X = !to_update_X;
                         }
