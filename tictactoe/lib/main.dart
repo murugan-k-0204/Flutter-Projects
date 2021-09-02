@@ -74,9 +74,21 @@ class _HomeScreenState extends State<HomeScreen> {
     }
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Tic Tac Toe"),),
+        appBar: AppBar(
+          title: Text("Tic Tac Toe"),
+          actions: [
+            IconButton(
+              onPressed: (){
+                setState(() {
+                  start_it();
+                  to_update_X = true;
+                });
+              }, 
+              icon: Icon(Icons.refresh,size: 30,))
+          ],
+        ),
         body: Container(
-        
+          color: Colors.blue,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -94,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(a,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(a,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                   ElevatedButton(
                     onPressed: (){
@@ -106,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(b,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(b,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                   ElevatedButton(
                     onPressed: (){
@@ -119,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(c,style: TextStyle(fontSize: 20,color: Colors.black),),
+                    child: Text(c,style: TextStyle(fontSize: 40,color: Colors.black,fontWeight: FontWeight.bold),),
                   ),
                 ],
               ),
@@ -136,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(d,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(d,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                   ElevatedButton(
                     onPressed: (){
@@ -148,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(e,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(e,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                   ElevatedButton(
                     onPressed: (){
@@ -160,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(f,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(f,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                 ],
               ),
@@ -177,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(g,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(g,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                   ElevatedButton(
                     onPressed: (){
@@ -189,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(h,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(h,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                   ElevatedButton(
                     onPressed: (){
@@ -201,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     style: ElevatedButton.styleFrom(fixedSize: Size(100,100),primary: Colors.white),
-                    child: Text(i,style: TextStyle(fontSize: 20,color:Colors.black),),
+                    child: Text(i,style: TextStyle(fontSize: 40,color:Colors.black,fontWeight: FontWeight.bold),),
                   ),
                 ],
               )
