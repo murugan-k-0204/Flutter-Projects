@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+// import 'package:tictactoe/tttValidator.dart';
 
 void main(){
   runApp(MaterialApp(home: HomeScreen()));
@@ -17,12 +18,13 @@ class default_val{
   String i= "";
   String winner = "Play on";
   bool isDisabled = false;
+  bool to_update_X = true;
   void init(){
   }
 }
 
 bool first_time= true;
-bool to_update_X = true;
+// bool to_update_X = true;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({ Key? key }) : super(key: key);
@@ -34,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   late String winner;
   bool color_is_blue = false;
   int announce_winner = 0;
-  late bool is_game_over;
+  bool is_game_over =false,to_update_X=false;
   late String a,b,c,d,e,f,g,h,i;
   
   void tttValidator(String a,String b, String c, String d, String e, String f,String g, String h, String i, BuildContext context){
@@ -50,12 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
       if(is_game_over)
         message(context,winner);
     }
-    else if( a!="" && b!="" && c!="" && d!="" && e!="" && f!="" && g!="" && h!="" && i!=""){
-      winner = "Oops!! It's a DRAW \n Better luck next time";
-
     }
     
-  }
 
   void start_it(){
     default_val ha = new default_val();
@@ -70,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
     i = ha.i;
     winner = ha.winner;
     is_game_over = ha.isDisabled;
+    to_update_X = ha.to_update_X;
   }
 
   void message(BuildContext context, String win){
@@ -84,6 +83,17 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           child: Text("see how he won",style: TextStyle(fontSize: 18),),
         ),
+        ElevatedButton(
+          child: Text("Play Again", style: TextStyle(fontSize: 18),),
+          onPressed: (){
+            setState(() {
+              start_it();
+            });
+            // start_it();
+            Navigator.of(context).pop();
+            // start_it();
+          },
+        )
       ],
     );
     showDialog(context: context, builder: (_) => alert);
